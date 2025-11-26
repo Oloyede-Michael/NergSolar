@@ -98,13 +98,13 @@ cd NergSolar
     ```bash
     npm start
     ```
-   The backend will run on `http://localhost:1050`.
+   The backend will run on `http://localhost:`.
 
 ### Frontend Setup
 
 1. **Navigate to the frontend directory**
     ```bash
-    cd ../wakamate_frontend
+    cd ../nergsolar_frontend
     ```
 2. **Install dependencies**
     ```bash
