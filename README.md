@@ -1,4 +1,4 @@
-# ⚡ NergSolar – Solar Energy E-commerce & Training Platform
+# NergSolar – Solar Energy E-commerce & Training Platform
 
 NergSolar is a modern web application designed for selling high–quality solar-powered products and educating individuals about solar energy installation and maintenance.  
 The platform allows customers to browse and purchase products like:
