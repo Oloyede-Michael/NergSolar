@@ -87,8 +87,8 @@ export default function NergSolarFooter() {
                 <Mail size={18} className="text-gray-700" />
                 <span className="font-semibold text-gray-900 text-sm">Customer Feedback</span>
               </div>
-              <a href="mailto:support@nergsolar.com" className="text-sm text-gray-600 hover:text-cyan-500">
-                support@nergsolar.com
+              <a href="mailto:support@drivexenergy.com" className="text-sm text-gray-600 hover:text-cyan-500">
+                support@drivexenergy.com
               </a>
             </div>
 
@@ -98,7 +98,7 @@ export default function NergSolarFooter() {
                 <Phone size={18} className="text-gray-700" />
                 <span className="font-semibold text-gray-900 text-sm">Call Us</span>
               </div>
-              <p className="text-sm text-gray-600">NergSolar Support: +1 (909) 287 7111</p>
+              <p className="text-sm text-gray-600">Drivex Energy Support: +1 (909) 287 7111</p>
             </div>
 
             {/* Service Time */}
@@ -134,7 +134,7 @@ export default function NergSolarFooter() {
         <div className="border-t border-gray-300 pt-8 mb-8">
           <div className="flex items-center gap-4">
             <p className="text-sm text-gray-700 font-medium">
-              Get NergSolar APP for system monitoring, story sharing,<br />and exclusive benefits.
+              Get Drivex Energy APP for system monitoring, story sharing,<br />and exclusive benefits.
             </p>
             <div className="flex gap-3">
               <a href="#" className="hover:opacity-80 transition-opacity">
@@ -150,7 +150,7 @@ export default function NergSolarFooter() {
         {/* Copyright */}
         <div className="border-t border-gray-300 pt-6 text-sm text-gray-600">
           <p>
-            Copyright © 2025 NergSolar NG. 
+            Copyright © 2026 Drivex Energy NG. 
             <a href="#" className="hover:text-cyan-500 ml-1">Shipping Policy</a> | 
             <a href="#" className="hover:text-cyan-500 ml-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-cyan-500 ml-1">Return Policy</a> | 

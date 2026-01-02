@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, SlidersHorizontal } from 'lucide-react';
+import AnimatedSection from './AnimatedSection'; // ← Import the AnimatedSection
 
 const ProductsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,209 +52,216 @@ const ProductsPage = () => {
     <div className="w-full bg-gray-50 min-h-screen">
       <div className="container mx-auto px-8 py-8">
         {/* Breadcrumb */}
-        <div className="mb-6">
-          <p className="text-sm text-gray-600">
-            <span className="hover:text-cyan-500 cursor-pointer">Home</span>
-            <span className="mx-2">›</span>
-            <span className="text-gray-900 font-semibold">All products</span>
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="mb-6">
+            <p className="text-sm text-gray-600">
+              <span className="hover:text-cyan-500 cursor-pointer">Home</span>
+              <span className="mx-2">›</span>
+              <span className="text-gray-900 font-semibold">All products</span>
+            </p>
+          </div>
+        </AnimatedSection>
 
         {/* Page Title */}
-        <h1 className="text-4xl font-bold text-gray-900 text-center mb-12">
-          All products
-        </h1>
+        <AnimatedSection delay={100}>
+          <h1 className="text-4xl font-bold text-gray-900 text-center mb-12">
+            All products
+          </h1>
+        </AnimatedSection>
 
         {/* Filter and Sort Bar */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-300">
-          <button className="flex items-center gap-2 text-gray-700 hover:text-cyan-500 font-semibold">
-            <SlidersHorizontal size={20} />
-            Filter
-          </button>
-          
-          <div className="flex items-center gap-2">
-            <span className="text-gray-700 font-semibold">Sort by</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="border border-gray-300 rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            >
-              <option>Featured</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Newest</option>
-              <option>Best Selling</option>
-            </select>
+        <AnimatedSection delay={200}>
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-300">
+            <button className="flex items-center gap-2 text-gray-700 hover:text-cyan-500 font-semibold">
+              <SlidersHorizontal size={20} />
+              Filter
+            </button>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-gray-700 font-semibold">Sort by</span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="border border-gray-300 rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              >
+                <option>Featured</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Newest</option>
+                <option>Best Selling</option>
+              </select>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Products Grid - 5 columns x 10 rows */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-12">
-          {currentProducts.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              {/* Product Image Container */}
-              <div className="relative bg-white p-4">
-                {/* Discount Badge */}
-                <div className="absolute top-2 left-2 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
-                  {product.badge}
-                </div>
-
-                {/* Product Image Placeholder */}
-                <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden mb-2 flex items-center justify-center">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-contain"
-                  />
-                  
-                  {/* Price Tags on Image */}
-                  <div className="absolute top-2 right-2 flex flex-col gap-1">
-                    <div className="bg-amber-400 text-gray-900 text-xs font-bold px-2 py-1 rounded">
-                      {product.oldPrice}
-                    </div>
-                    <div className="bg-amber-300 text-gray-700 text-xs font-semibold px-2 py-1 rounded">
-                      Member Price
-                    </div>
+          {currentProducts.map((product, index) => (
+            <AnimatedSection key={product.id} delay={index * 30} threshold={0.05}>
+              <div className="bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                {/* Product Image Container */}
+                <div className="relative bg-white p-4">
+                  {/* Discount Badge */}
+                  <div className="absolute top-2 left-2 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
+                    {product.badge}
                   </div>
 
-                  {/* 30 Day Price Badge */}
-                  {product.special && (
-                    <div className="absolute bottom-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
-                      {product.special}
+                  {/* Product Image Placeholder */}
+                  <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden mb-2 flex items-center justify-center">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="w-full h-full object-contain"
+                    />
+                    
+                    {/* Price Tags on Image */}
+                    <div className="absolute top-2 right-2 flex flex-col gap-1">
+                      <div className="bg-amber-400 text-gray-900 text-xs font-bold px-2 py-1 rounded">
+                        {product.oldPrice}
+                      </div>
+                      <div className="bg-amber-300 text-gray-700 text-xs font-semibold px-2 py-1 rounded">
+                        Member Price
+                      </div>
                     </div>
-                  )}
+
+                    {/* 30 Day Price Badge */}
+                    {product.special && (
+                      <div className="absolute bottom-2 right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">
+                        {product.special}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Was Price */}
+                  <div className="text-center">
+                    <span className="text-xs text-gray-500">Was </span>
+                    <span className="text-xs text-gray-500 line-through">
+                      {product.wasPrice}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Was Price */}
-                <div className="text-center">
-                  <span className="text-xs text-gray-500">Was </span>
-                  <span className="text-xs text-gray-500 line-through">
-                    {product.wasPrice}
-                  </span>
+                {/* Product Details */}
+                <div className="p-4">
+                  {/* Tag */}
+                  <div className="mb-2">
+                    <span className={`text-xs font-semibold ${
+                      product.tag === 'New' ? 'text-cyan-500' : 
+                      product.tag === 'Hot' ? 'text-orange-600' : 
+                      'text-blue-600'
+                    }`}>
+                      {product.tag}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-sm font-semibold text-gray-900 mb-2 line-clamp-2 min-h-[40px]">
+                    {product.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-xs text-gray-600 mb-3 line-clamp-2 min-h-[32px]">
+                    {product.description}
+                  </p>
+
+                  {/* Price */}
+                  <div className="mb-4">
+                    <span className="text-xs text-gray-500">From </span>
+                    <span className="text-lg font-bold text-gray-900">
+                      {product.newPrice}
+                    </span>
+                    <span className="text-xs text-gray-500 line-through ml-2">
+                      {product.wasPrice}
+                    </span>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-2">
+                    <button className="flex-1 bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-3 rounded-full text-sm transition-colors">
+                      Choose Options
+                    </button>
+                  </div>
                 </div>
               </div>
-
-              {/* Product Details */}
-              <div className="p-4">
-                {/* Tag */}
-                <div className="mb-2">
-                  <span className={`text-xs font-semibold ${
-                    product.tag === 'New' ? 'text-cyan-500' : 
-                    product.tag === 'Hot' ? 'text-orange-600' : 
-                    'text-blue-600'
-                  }`}>
-                    {product.tag}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-sm font-semibold text-gray-900 mb-2 line-clamp-2 min-h-[40px]">
-                  {product.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs text-gray-600 mb-3 line-clamp-2 min-h-[32px]">
-                  {product.description}
-                </p>
-
-                {/* Price */}
-                <div className="mb-4">
-                  <span className="text-xs text-gray-500">From </span>
-                  <span className="text-lg font-bold text-gray-900">
-                    {product.newPrice}
-                  </span>
-                  <span className="text-xs text-gray-500 line-through ml-2">
-                    {product.wasPrice}
-                  </span>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
-                  <button className="flex-1 bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-3 rounded-full text-sm transition-colors">
-                    Choose Options
-                  </button>
-                </div>
-              </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
 
         {/* Pagination */}
-        <div className="flex items-center justify-center gap-2 pb-12">
-          {/* Previous Button */}
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-            className={`p-2 rounded-lg border ${
-              currentPage === 1
-                ? 'border-gray-300 text-gray-400 cursor-not-allowed'
-                : 'border-gray-300 text-gray-700 hover:bg-gray-100'
-            }`}
-          >
-            <ChevronLeft size={20} />
-          </button>
-
-          {/* First Page */}
-          {getPaginationRange()[0] > 1 && (
-            <>
-              <button
-                onClick={() => handlePageChange(1)}
-                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100"
-              >
-                1
-              </button>
-              {getPaginationRange()[0] > 2 && (
-                <span className="px-2 text-gray-500">...</span>
-              )}
-            </>
-          )}
-
-          {/* Page Numbers */}
-          {getPaginationRange().map((page) => (
+        <AnimatedSection>
+          <div className="flex items-center justify-center gap-2 pb-12">
+            {/* Previous Button */}
             <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              className={`px-4 py-2 rounded-lg border ${
-                page === currentPage
-                  ? 'bg-cyan-500 text-white border-cyan-500'
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-lg border ${
+                currentPage === 1
+                  ? 'border-gray-300 text-gray-400 cursor-not-allowed'
                   : 'border-gray-300 text-gray-700 hover:bg-gray-100'
               }`}
             >
-              {page}
+              <ChevronLeft size={20} />
             </button>
-          ))}
 
-          {/* Last Page */}
-          {getPaginationRange()[getPaginationRange().length - 1] < totalPages && (
-            <>
-              {getPaginationRange()[getPaginationRange().length - 1] < totalPages - 1 && (
-                <span className="px-2 text-gray-500">...</span>
-              )}
+            {/* First Page */}
+            {getPaginationRange()[0] > 1 && (
+              <>
+                <button
+                  onClick={() => handlePageChange(1)}
+                  className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100"
+                >
+                  1
+                </button>
+                {getPaginationRange()[0] > 2 && (
+                  <span className="px-2 text-gray-500">...</span>
+                )}
+              </>
+            )}
+
+            {/* Page Numbers */}
+            {getPaginationRange().map((page) => (
               <button
-                onClick={() => handlePageChange(totalPages)}
-                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100"
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-4 py-2 rounded-lg border ${
+                  page === currentPage
+                    ? 'bg-cyan-500 text-white border-cyan-500'
+                    : 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                }`}
               >
-                {totalPages}
+                {page}
               </button>
-            </>
-          )}
+            ))}
 
-          {/* Next Button */}
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-            className={`p-2 rounded-lg border ${
-              currentPage === totalPages
-                ? 'border-gray-300 text-gray-400 cursor-not-allowed'
-                : 'border-gray-300 text-gray-700 hover:bg-gray-100'
-            }`}
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
+            {/* Last Page */}
+            {getPaginationRange()[getPaginationRange().length - 1] < totalPages && (
+              <>
+                {getPaginationRange()[getPaginationRange().length - 1] < totalPages - 1 && (
+                  <span className="px-2 text-gray-500">...</span>
+                )}
+                <button
+                  onClick={() => handlePageChange(totalPages)}
+                  className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100"
+                >
+                  {totalPages}
+                </button>
+              </>
+            )}
+
+            {/* Next Button */}
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-lg border ${
+                currentPage === totalPages
+                  ? 'border-gray-300 text-gray-400 cursor-not-allowed'
+                  : 'border-gray-300 text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </AnimatedSection>
       </div>
     </div>
   );

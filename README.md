@@ -1,6 +1,6 @@
-# NergSolar – Solar Energy E-commerce & Training Platform
+# Drivex Energy – Solar Energy E-commerce & Training Platform
 
-NergSolar is a modern web application designed for selling high–quality solar-powered products and educating individuals about solar energy installation and maintenance.  
+Drivex Energy is a modern web application designed for selling high–quality solar-powered products and educating individuals about solar energy installation and maintenance.  
 The platform allows customers to browse and purchase products like:
 
 - Solar panels  
@@ -9,7 +9,7 @@ The platform allows customers to browse and purchase products like:
 - Inverters  
 - Batteries & accessories  
 
-Beyond sales, NergSolar also provides **certification programs**, **training**, and **professional guidance** for users interested in solar panel installation and renewable energy systems.
+Beyond sales, Drivex Energy also provides **certification programs**, **training**, and **professional guidance** for users interested in solar panel installation and renewable energy systems.
 
 ---
 

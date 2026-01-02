@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedSection from './AnimatedSection';
 import HomePage from './HomePage';
 import Slider from './slider';
 import BestSeller from './BestSeller';
@@ -10,11 +11,26 @@ export default function LandingPage() {
   return (
     <div className="w-full overflow-x-hidden">
       <Slider />
-      <BestSeller />
-      <HomePage />
-      <AboutFounder />
-      <FAQ />
-      <NewsletterCTA />
+      
+      <AnimatedSection>
+        <BestSeller />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={100}>
+        <HomePage />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={150}>
+        <AboutFounder />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={100}>
+        <FAQ />
+      </AnimatedSection>
+      
+      <AnimatedSection>
+        <NewsletterCTA />
+      </AnimatedSection>
     </div>
   );
 }

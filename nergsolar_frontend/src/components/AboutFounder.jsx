@@ -25,7 +25,7 @@ const AboutFounder = () => {
                 <div className="aspect-[4/5] bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
                   <img
                     src="images/ceo_image.jpg"
-                    alt="Egbor Daniel Leonard - CEO of NergSolar"
+                    alt="Egbor Daniel Leonard - CEO of Drivex Energy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -48,25 +48,25 @@ const AboutFounder = () => {
                   Egbor Daniel Leonard
                 </h3>
                 <p className="text-xl text-cyan-500 font-semibold mb-6">
-                  CEO & Founder of NergSolar
+                  CEO & Founder of Drivex Energy
                 </p>
               </div>
 
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  With over a decade of experience in renewable energy, Egbor Daniel Leonard 
-                  founded NergSolar with a vision to make clean, sustainable energy accessible 
+                  With over a 5 years of experience in renewable energy, Egbor Daniel Leonard 
+                  founded Drivex Energy with a vision to make clean, sustainable energy accessible 
                   to everyone. His passion for environmental conservation and innovative 
                   technology has driven the company to become a leader in the solar industry.
                 </p>
                 <p>
-                  Under his leadership, NergSolar has helped thousands of homes and businesses 
+                  Under his leadership, Drivex Energy has helped hundreds of homes and businesses 
                   transition to solar power, reducing carbon footprints and energy costs. 
                   Daniel's commitment to excellence and customer satisfaction has been the 
-                  cornerstone of NergSolar's success.
+                  cornerstone of Drivex Energy's success.
                 </p>
                 <p>
-                  His expertise spans solar technology, sustainable business practices, and 
+                  His expertise spans solar technology, sustainable business practices,Chemistry and 
                   strategic growth, making him a respected voice in the renewable energy sector.
                 </p>
               </div>
@@ -78,7 +78,7 @@ const AboutFounder = () => {
                     <Award className="text-cyan-500" size={24} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">10+ Years</p>
+                    <p className="font-bold text-gray-900">5+ Years</p>
                     <p className="text-sm text-gray-600">Industry Experience</p>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ const AboutFounder = () => {
                     <Target className="text-cyan-500" size={24} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">5000+</p>
+                    <p className="font-bold text-gray-900">1000+</p>
                     <p className="text-sm text-gray-600">Happy Customers</p>
                   </div>
                 </div>
@@ -96,16 +96,18 @@ const AboutFounder = () => {
               {/* Social Links */}
               <div className="flex gap-4 pt-6">
                 <a
-                  href="#"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/daniel-leonard-744033269"
                   className="bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-lg transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={24} />
                 </a>
-                <a
-                  href="#"
-                  className="bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-lg transition-colors"
-                  aria-label="Email"
+                <a 
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=new&to=danegbor@gmail.com" 
+                  className="bg-cyan-500 hover:bg-cyan-600 text-white p-3 rounded-lg transition-colors" 
+                  aria-label="Email" 
+                  target="_blank"
                 >
                   <Mail size={24} />
                 </a>

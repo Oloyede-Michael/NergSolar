@@ -9,7 +9,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Welcome to NergSolar
+              Welcome to Drivex Energy Solutions
             </h1>
             <p className="text-lg md:text-2xl text-gray-600 mb-10">
               Trusted Energy Solutions for Your Home and Business
@@ -87,7 +87,7 @@ export default function HomePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Why Choose NergSolar?
+            Why Choose Drivex Energy?
           </h2>
 
           {/* ✅ 1 → 2 → 3 responsive */}
@@ -136,7 +136,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4">
-                "NergSolar transformed our home with reliable solar power. The installation was smooth and the support team was excellent!"
+                "Drivex Energy transformed our home with reliable solar power. The installation was smooth and the support team was excellent!"
               </p>
               <p className="font-semibold text-gray-900">- Adebayo M., Lagos</p>
             </div>
@@ -162,7 +162,7 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4">
-                "Outstanding quality and performance. The complete kit had everything we needed. Highly recommend NergSolar!"
+                "Outstanding quality and performance. The complete kit had everything we needed. Highly recommend Drivex Energy!"
               </p>
               <p className="font-semibold text-gray-900">- Ibrahim K., Kano</p>
             </div>

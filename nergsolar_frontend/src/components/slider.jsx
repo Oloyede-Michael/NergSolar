@@ -8,7 +8,7 @@ const ImageSlider = () => {
     {
       image: "images/solar_engineers.jpg",
       badge: "Early Black Friday | Nov. 5-19",
-      title: "Welcome To NergSolar",
+      title: "Welcome To Drivex Energy",
       subtitle: "A fast driving portable  energy company known for it reliable solar-designed devices",
       details: "Solar Products from ₦10,000 | Solar Panels from ₦100,000"
     },
@@ -27,7 +27,7 @@ const ImageSlider = () => {
       details: "Controllers from ₦80,000 | Chargers from ₦20,000"
     },
     {
-      image: "/assets/slide3.jpg", // Add your image path here
+      image: "/images/solar_image1.jpg",
       badge: "BigTime Deal",
       title: "Save Big Today",
       subtitle: "Best Prices Guaranteed | Premium Quality",
@@ -36,7 +36,7 @@ const ImageSlider = () => {
     {
       image: "images/solar-power-panel.jpg", 
       badge: "Traning and Certification",
-      title: "Get certified with NergSolar",
+      title: "Get certified with Drivex Energy",
       subtitle: "Best Certificates | Premium Quality",
       details: "Traning | Certification as Solar Engineers"
     }
@@ -123,13 +123,13 @@ const ImageSlider = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all cursor-pointer"
         >
           <ChevronLeft size={32} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all cursor-pointer"
         >
           <ChevronRight size={32} />
         </button>
