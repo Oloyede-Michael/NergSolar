@@ -10,27 +10,27 @@ import AboutFounder from './AboutFounder';
 export default function LandingPage() {
   return (
     <div className="w-full overflow-x-hidden">
-      <Slider />
-      
-      <AnimatedSection>
-        <BestSeller />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <HomePage />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={150}>
-        <AboutFounder />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <FAQ />
-      </AnimatedSection>
-      
-      <AnimatedSection>
-        <NewsletterCTA />
-      </AnimatedSection>
+      <div className="w-full overflow-x-hidden"> {/* Extra wrapper */}
+        <Slider />
+        
+        <AnimatedSection>
+          <BestSeller />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
+          <HomePage />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={150}>
+          <AboutFounder />
+        </AnimatedSection>
+        
+        <AnimatedSection delay={100}>
+          <FAQ />
+        </AnimatedSection>
+        
+          <NewsletterCTA />
+      </div>
     </div>
   );
 }

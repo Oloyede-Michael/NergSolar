@@ -7,7 +7,11 @@ const useScrollAnimation = (threshold = 0.1) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          // Add animation class when element enters viewport
           entry.target.classList.add('animate-in');
+        } else {
+          // Remove animation class when element leaves viewport
+          entry.target.classList.remove('animate-in');
         }
       },
       { threshold }
@@ -40,7 +44,7 @@ export default function AnimatedSection({
   return (
     <div
       ref={ref}
-      className={`scroll-animate ${className}`}
+      className={`scroll-animate overflow-x-hidden ${className}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {children}
